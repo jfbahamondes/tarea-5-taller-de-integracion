@@ -39,6 +39,7 @@ const Main: FunctionComponent<MainProps & PropsFromRedux> = (
 ) => {
   useEffect(() => {
     props.setExampleInfo();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function renderContent() {

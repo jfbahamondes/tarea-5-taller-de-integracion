@@ -7,6 +7,13 @@ import reducer from "./redux/reducers";
 import Main from "./components/Main";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core";
 import { blue } from "@material-ui/core/colors";
+import ApolloClient from "apollo-boost";
+import { URL } from "./components/common/constants";
+import { ApolloProvider } from "@apollo/react-hooks";
+
+const client = new ApolloClient({
+  uri: URL
+});
 
 const theme = createMuiTheme({
   palette: {
@@ -23,11 +30,13 @@ const theme = createMuiTheme({
 export default class App extends Component {
   render() {
     return (
-      <Provider store={createStore(reducer, {}, applyMiddleware(ReduxThunk))}>
-        <MuiThemeProvider theme={theme}>
-          <Main />
-        </MuiThemeProvider>
-      </Provider>
+      <ApolloProvider client={client}>
+        <Provider store={createStore(reducer, {}, applyMiddleware(ReduxThunk))}>
+          <MuiThemeProvider theme={theme}>
+            <Main />
+          </MuiThemeProvider>
+        </Provider>
+      </ApolloProvider>
     );
   }
 }

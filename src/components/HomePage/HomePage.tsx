@@ -1,21 +1,66 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent } from "react";
 import CenteredLoader from "../common/CenteredLoader";
-import useFetchEffect from "../helpers/useFetch";
-import { URL } from "../common/constants";
+import { gql } from "apollo-boost";
+import { useQuery } from "@apollo/react-hooks";
+
+const GET_EPISODES = gql`
+  query Episodes($page: Int) {
+    episodes(page: $page) {
+      info {
+        count
+        next
+      }
+      results {
+        id
+        name
+        air_date
+        episode
+        characters {
+          id
+        }
+        created
+      }
+    }
+  }
+`;
 
 const HomePage: FunctionComponent = () => {
-  const { data, loading } = useFetchEffect(`${URL}/episode`, {
-    info: {} as any,
-    results: [] as string[]
+  const { loading, error, data, fetchMore } = useQuery(GET_EPISODES, {
+    variables: {
+      $pages: 1
+    }
   });
+  if (data?.episodes?.info?.next) {
+    fetchMore({
+      variables: {
+        page: data.episodes.info.next
+      },
+      updateQuery: (prev: any, { fetchMoreResult }) => {
+        if (!fetchMoreResult) return prev;
+        const nextObject = {
+          episodes: {
+            ...prev.episodes,
+            info: fetchMoreResult.episodes.info,
+            results: [
+              ...prev.episodes.results,
+              ...fetchMoreResult.episodes.results
+            ]
+          }
+        };
+        return nextObject;
+      }
+    });
+  }
   return (
     <div>
       <h2 style={{ color: "#477385" }}>HomePage</h2>
       {loading ? (
         <CenteredLoader />
+      ) : error ? (
+        <div>error</div>
       ) : (
         <div>
-          <h4>Episodes: {data.info.count}</h4>
+          <h4>Episodes: {data.episodes.info.count}</h4>
           <div
             style={{
               display: "flex",
@@ -23,9 +68,9 @@ const HomePage: FunctionComponent = () => {
               justifyContent: "space-around"
             }}
           >
-            {data.results.map((episode: any, index: number) => (
+            {data.episodes.results.map((episode: any, index: number) => (
               <a
-                href={`/#/episode/${episode.url.split("episode/")[1]}`}
+                href={`/#/episode/${episode.id}`}
                 style={{
                   margin: 10,
                   textDecoration: "none",

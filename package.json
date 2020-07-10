@@ -12,9 +12,11 @@
     "@types/react-loader-spinner": "^3.1.0",
     "@types/react-redux": "^7.1.7",
     "@types/react-router-dom": "^5.1.3",
+    "apollo-boost": "^0.4.9",
     "awesome-typescript-loader": "^5.2.1",
     "email-validator": "^2.0.4",
     "firebase": "^7.6.1",
+    "graphql": "^15.3.0",
     "graphql-tag": "^2.10.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -34,7 +36,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -53,6 +57,8 @@
   },
   "devDependencies": {
     "eslint-plugin-prettier": "^3.1.2",
+    "gh-pages": "^3.1.0",
     "prettier": "1.19.1"
-  }
+  },
+  "homepage": "https://jfbahamondes.github.io/tarea-5-taller-de-integracion"
 }
