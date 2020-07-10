@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tarea-5-taller-de-integracion/static/css/main.b14f9a62.chunk.css",
+    "main.js": "/tarea-5-taller-de-integracion/static/js/main.a5bde09a.chunk.js",
+    "main.js.map": "/tarea-5-taller-de-integracion/static/js/main.a5bde09a.chunk.js.map",
+    "runtime-main.js": "/tarea-5-taller-de-integracion/static/js/runtime-main.963d9b75.js",
+    "runtime-main.js.map": "/tarea-5-taller-de-integracion/static/js/runtime-main.963d9b75.js.map",
+    "static/js/2.b0632f8d.chunk.js": "/tarea-5-taller-de-integracion/static/js/2.b0632f8d.chunk.js",
+    "static/js/2.b0632f8d.chunk.js.map": "/tarea-5-taller-de-integracion/static/js/2.b0632f8d.chunk.js.map",
+    "index.html": "/tarea-5-taller-de-integracion/index.html",
+    "precache-manifest.9e952723f4eaf59735f96fd5bfa54f7a.js": "/tarea-5-taller-de-integracion/precache-manifest.9e952723f4eaf59735f96fd5bfa54f7a.js",
+    "service-worker.js": "/tarea-5-taller-de-integracion/service-worker.js",
+    "static/css/main.b14f9a62.chunk.css.map": "/tarea-5-taller-de-integracion/static/css/main.b14f9a62.chunk.css.map",
+    "static/js/2.b0632f8d.chunk.js.LICENSE": "/tarea-5-taller-de-integracion/static/js/2.b0632f8d.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.963d9b75.js",
+    "static/js/2.b0632f8d.chunk.js",
+    "static/css/main.b14f9a62.chunk.css",
+    "static/js/main.a5bde09a.chunk.js"
+  ]
+}
