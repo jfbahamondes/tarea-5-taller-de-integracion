@@ -69,7 +69,9 @@ export default function Character() {
             <div>
               Origin:{" "}
               {data.character.origin.name !== "unknown" ? (
-                <a href={`/#/location/${data.character.origin.id}`}>
+                <a
+                  href={`/tarea-5-taller-de-integracion/#/location/${data.character.origin.id}`}
+                >
                   {data.character.origin.name}
                 </a>
               ) : (
@@ -79,7 +81,9 @@ export default function Character() {
             <div>
               Location:{" "}
               {data.character.location.name !== "unknown" ? (
-                <a href={`/#/location/${data.character.location.id}`}>
+                <a
+                  href={`/tarea-5-taller-de-integracion/#/location/${data.character.location.id}`}
+                >
                   {data.character.location.name}
                 </a>
               ) : (
@@ -93,7 +97,10 @@ export default function Character() {
           <div>
             {data.character.episode.length > 0 &&
               data.character.episode.map((episode: any, index: number) => (
-                <a href={`/#/episode/${episode.id}`} key={index}>
+                <a
+                  href={`/tarea-5-taller-de-integracion/#/episode/${episode.id}`}
+                  key={index}
+                >
                   <div> {episode.name}</div>
                 </a>
               ))}

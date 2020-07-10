@@ -66,7 +66,7 @@ export default function Episode() {
                     borderRadius: 10,
                     color: "#fff"
                   }}
-                  href={`/#/character/${character.id}`}
+                  href={`/tarea-5-taller-de-integracion/#/character/${character.id}`}
                   key={index}
                 >
                   <img

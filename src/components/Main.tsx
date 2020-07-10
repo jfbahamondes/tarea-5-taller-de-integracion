@@ -80,7 +80,7 @@ const Main: FunctionComponent<MainProps & PropsFromRedux> = (
       >
         <h1>
           <a
-            href="/#/"
+            href="/tarea-5-taller-de-integracion/#/"
             style={{
               textDecoration: "none",
               color: "#926f44"

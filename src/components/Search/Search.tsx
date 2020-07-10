@@ -202,7 +202,7 @@ export default function Search() {
               ? dataEpisodes.episodes.results.map(
                   (episode: any, index: number) => (
                     <a
-                      href={`/#/episode/${episode.id}`}
+                      href={`/tarea-5-taller-de-integracion/#/episode/${episode.id}`}
                       style={{
                         margin: 10,
                         textDecoration: "none",
@@ -261,7 +261,7 @@ export default function Search() {
                       key={index}
                     >
                       <a
-                        href={`/#/character/${character.id}`}
+                        href={`/tarea-5-taller-de-integracion/#/character/${character.id}`}
                         style={{
                           width: "200px",
                           backgroundColor: "#2f9331",
@@ -295,7 +295,9 @@ export default function Search() {
                         <div>
                           Origin:{" "}
                           {character.origin.name !== "unknown" ? (
-                            <a href={`/#/location/${character.origin.id}`}>
+                            <a
+                              href={`/tarea-5-taller-de-integracion/#/location/${character.origin.id}`}
+                            >
                               {character.origin.name}
                             </a>
                           ) : (
@@ -305,7 +307,9 @@ export default function Search() {
                         <div>
                           Location:{" "}
                           {character.location.name !== "unknown" ? (
-                            <a href={`/#/location/${character.location.id}`}>
+                            <a
+                              href={`/tarea-5-taller-de-integracion/#/location/${character.location.id}`}
+                            >
                               {character.location.name}
                             </a>
                           ) : (
@@ -336,7 +340,7 @@ export default function Search() {
               ? dataLocations.locations.results.map(
                   (location: any, index: number) => (
                     <a
-                      href={`/#/location/${location.id}`}
+                      href={`/tarea-5-taller-de-integracion/#/location/${location.id}`}
                       style={{
                         margin: 10,
                         textDecoration: "none",

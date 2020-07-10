@@ -31,7 +31,7 @@ export default function SearchBar() {
   const classes = useStyles();
   const [search, setSearch] = useState("");
   function handleSearch() {
-    window.location.href = `/#/search/${search}`;
+    window.location.href = `/tarea-5-taller-de-integracion/#/search/${search}`;
   }
 
   return (

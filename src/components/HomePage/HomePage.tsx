@@ -70,7 +70,7 @@ const HomePage: FunctionComponent = () => {
           >
             {data.episodes.results.map((episode: any, index: number) => (
               <a
-                href={`/#/episode/${episode.id}`}
+                href={`/tarea-5-taller-de-integracion/#/episode/${episode.id}`}
                 style={{
                   margin: 10,
                   textDecoration: "none",
